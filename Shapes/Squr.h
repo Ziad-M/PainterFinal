@@ -21,6 +21,5 @@ public:
 	void OPZOOM(double px, double py, double scale);
 	void ResizeShape(double scale);  	//Resize a single square
 	void RotateShape();  	//Rotate a single square
-	void Scramble(int i, int j);
-	void StickImage(GUI* pGUI) override;
+	void Scramble();
 };

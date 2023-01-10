@@ -23,5 +23,11 @@ void  SwitchToDraw::Execute()
 
 	pUI->ClearStatusBar();
 }
-void SwitchToDraw::Undo() {}
-void SwitchToDraw::Redo() {}
+void SwitchToDraw::Undo()
+{
+	
+}
+void SwitchToDraw::Redo()
+{
+	
+}

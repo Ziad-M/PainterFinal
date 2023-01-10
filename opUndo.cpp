@@ -12,15 +12,13 @@ void opUndo::Execute() {
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
 
-	if (pControl->getLastDoneOp())
+	if (pControl->PreviousDone())
 	{
-		pControl->getLastDoneOp()->Undo();
+		pControl->PreviousDone()->Undo();
 		pControl->Undo();
 		pGr->isSaved = false;
 	}
-	else {
-		pUI->PrintMessage("There is nothing to be Undone!");
-	}
+
 }
 
 void opUndo::Undo() {}

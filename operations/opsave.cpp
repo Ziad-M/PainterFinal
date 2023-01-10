@@ -15,10 +15,10 @@ void opsave::Execute()
 void opsave::Undo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack();
 }
 void opsave::Redo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

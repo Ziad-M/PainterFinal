@@ -61,27 +61,22 @@ void Ccircle::ResizeShape(double scale)  	//Resize a single regular polygon
 void Ccircle::RotateShape()  	//Rotate a single regular polygon
 {}
 
-void Ccircle::Scramble(int i, int j)
+void Ccircle::Scramble()
 {
+	double rad = sqrt((center.x - border.x) * (center.x - border.x) + (center.y - border.y) * (center.y - border.y));
+	int temp1 = (rand() % 1000) + 25;
+	int temp2 = (rand() % 600) + 50;
+	center.x = temp1;
+	center.y = temp2;
+	 /*if(center.y + rad < 50)
+	center.y = center.y + (50);
+	if(center.y + rad > 1200)
+	center.y = center.y - (50); */
+
+	border.x = temp1 + rad;
+	border.y = temp2;
 	
-	center.x = i;
-	center.y = j;
-
-	border.x = i + 50;
-	border.y = j;
-	
 
 
 
-}
-void Ccircle::StickImage(GUI* pGUI)
-{
-	double rad = sqrt(pow((border.x - center.x), 2) + pow((border.y - center.y), 2));
-	Point P;
-	P.x = center.x - rad;
-	P.y = center.y - rad;
-	int width = rad * 2;
-	int length = width;
-	string image = "images\\MenuIcons\\Stick.jpg";
-	pGUI->StickImage(image, P, width, length);
 }

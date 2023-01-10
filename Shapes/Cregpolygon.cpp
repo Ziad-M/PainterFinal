@@ -112,24 +112,13 @@ void polygon::ResizeShape(double scale)  	//Resize a single regular polygon
 void polygon::RotateShape()  	//Rotate a single regular polygon
 {}
 
-void polygon::Scramble(int i, int j)
+void polygon::Scramble()
 {
 	int temp1 = (rand() % 1000);
 	int temp2 = (rand() % 500);
-	center.x = i;
-	center.y = j;
-	point1.x = i + 150;
-	point1.y = j;
+	center.x = temp1;
+	center.y = temp2;
+	point1.x = temp1 + distance;
+	point1.y = temp2;
 
-}
-void polygon::StickImage(GUI* pGUI)
-{
-	double rad = sqrt(pow((point1.x - center.x), 2) + pow((point1.y - center.y), 2));
-	Point P;
-	P.x = center.x - rad;
-	P.y = center.y - rad;
-	int width = rad * 2;
-	int length = width;
-	string image = "images\\MenuIcons\\Stick.jpg";
-	pGUI->StickImage(image, P, width, length);
 }

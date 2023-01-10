@@ -121,11 +121,7 @@ void irr_polygon::RotateShape()  	//Rotate a single irregular polygon
 
 }
 
-void irr_polygon::Scramble(int i, int j)
-{
-
-}
-void irr_polygon::StickImage(GUI* pGUI)
+void irr_polygon::Scramble()
 {
 
 }

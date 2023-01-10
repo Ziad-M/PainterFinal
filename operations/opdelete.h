@@ -9,7 +9,7 @@
 class opdelete :operation {
 public:
 	opdelete(controller* pCont);
-	virtual void Execute();
+	virtual void Execute(); 
 	virtual void Undo() override;
 	virtual void Redo() override;
 };

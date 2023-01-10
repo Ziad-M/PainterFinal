@@ -90,9 +90,9 @@ void Ellip::RotateShape()  	//Rotate a single ellipse
 {}
 
 
-void Ellip::Scramble(int i, int j)
-{ /*
-p1 = (rand() % 1000);
+void Ellip::Scramble()
+{ 
+	int temp1 = (rand() % 1000);
 	int temp2 = (rand() % 500);
 	Point oo;
 	oo.x = (Corner1.x + Corner2.x) / 2;
@@ -101,13 +101,4 @@ p1 = (rand() % 1000);
 	Corner1.y = temp2 - oo.y + Corner1.y;
 	Corner2.x = temp1 - oo.x + Corner2.x;
 	Corner2.y = temp2 - oo.y + Corner2.y;
-	*/
-	Corner1.x = i -80;
-	Corner1.y = j -40;
-	Corner2.x = i +80;
-	Corner2.y = j +40;
-}
-void Ellip::StickImage(GUI* pGUI)
-{
-	
 }

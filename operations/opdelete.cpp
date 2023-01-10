@@ -19,10 +19,10 @@ opdelete::opdelete(controller* pCont) : operation(pCont)
 	void opdelete::Undo()
 	{
 		Graph* pGr = pControl->getGraph();
-		pGr->SendFromShapesListToUndo();
+		pGr->AddToUndoStack();
 	}
 	void opdelete::Redo()
 	{
 		Graph* pGr = pControl->getGraph();
-		pGr->SendFromUndoToShapesList();
+		pGr->AddtoShapeList();
 	}

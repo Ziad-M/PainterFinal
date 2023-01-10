@@ -75,9 +75,9 @@ void Rect::ResizeShape(double scale)  	//Resize a single rectangle
 void Rect::RotateShape()  	//Rotate a single rectangle
 {}
 
-void Rect::Scramble(int i, int j)
+void Rect::Scramble()
 {
-	/*int temp1 = (rand() % 1000);
+	int temp1 = (rand() % 1000);
 	int temp2 = (rand() % 500);
 	double CenterX = (Corner1.x + Corner2.x) / 2;
 	double CenterY = (Corner1.y + Corner2.y) / 2;
@@ -86,21 +86,11 @@ void Rect::Scramble(int i, int j)
 	int Temp1x = Corner1.x;
 	int Temp1y = Corner1.y;
 	int Temp2x = Corner2.x;
-	int Temp2y = Corner2.y;*/
+	int Temp2y = Corner2.y;
 
-	Corner1.x = i - 80;
-	Corner1.y = j - 40;
-	Corner2.x = i + 80;
-	Corner2.y = j + 40;
+	Corner1.x = Temp1x + dx;
+	Corner1.y = Temp1y + dy;
+	Corner2.x = Temp2x + dx;
+	Corner2.y = Temp2y + dy;
 
-}
-void Rect::StickImage(GUI* pGUI)
-{
-	Point P;
-	P.x = Corner1.x;
-	P.y = Corner1.y;
-	int width = abs(Corner1.x - Corner2.x);
-	int length = abs(Corner1.y - Corner2.y);
-	string image = "images\\MenuIcons\\Stick.jpg";
-	pGUI->StickImage(image, P, width, length);
 }

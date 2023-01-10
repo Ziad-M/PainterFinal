@@ -88,7 +88,7 @@ void Line::ResizeShape(double scale)  	//Resize a single line
 void Line::RotateShape()  	//Rotate a single line
 {}
 
-void Line::Scramble(int i, int j)
+void Line::Scramble()
 {
 	/*int temp1 = (rand() % 1000);
 	int temp2 = (rand() % 500);
@@ -105,7 +105,7 @@ void Line::Scramble(int i, int j)
 	Corner1.y = Temp1y + dy;
 	Corner2.x = Temp2x + dx;
 	Corner2.y = Temp2y + dy;*/
-	/*int x = rand()% 1300;
+	int x = rand()% 1300;
 	int y = rand()% 700;
 
 	double corner1tempx = Corner1.x;
@@ -126,12 +126,5 @@ void Line::Scramble(int i, int j)
 	Corner1.y - 50; Corner2.y - 50;
 	if(Corner2.y > 650 ) 
 	Corner1.y - 50; Corner2.y - 50;*/
-	Corner1.x = i;
-	Corner1.y = j;
-	Corner2.x = i + 100;
-	Corner2.y = j;
 
-}
-void Line::StickImage(GUI* pGUI)
-{
 }

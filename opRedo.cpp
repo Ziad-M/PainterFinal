@@ -6,8 +6,6 @@
 opRedo::opRedo(controller* pCont) :operation(pCont) {}
 
 opRedo::~opRedo() {};
-void opRedo::Undo() {};
-void opRedo::Redo() {};
 
 
 void opRedo::Execute()
@@ -15,13 +13,14 @@ void opRedo::Execute()
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
 
-	if (pControl->getLastUndoneOp())
+	if (pControl->PreviousUndone())
 	{
-		pControl->getLastUndoneOp()->Redo();
+		pControl->PreviousUndone()->Redo();
 		pControl->Redo();
 		pGr->isSaved = false;
 	}
-	else {
-		pUI->PrintMessage("There is nothing to be Redone!");
-	}
 };
+
+
+void opRedo::Undo() {};
+void opRedo::Redo() {};

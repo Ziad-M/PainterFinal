@@ -11,7 +11,7 @@ GUI::GUI()
 	wy = 5;
 	StatusBarHeight = 50;
 	ToolBarHeight = 47;
-	MenuIconWidth = 40;
+	MenuIconWidth = 43;
 
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = GREEN;	//default Filling color
@@ -115,10 +115,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_MOVEBYDRAG: return MOVE; 
 			case ICON_SELINFO: return SelctedInfo;
 			case ICON_SCRAMBLE: return SCRAMBLE;
-			case ICON_STICK: return STICK;
 			case ICON_UNDO: return UNDO;
 			case ICON_REDO: return REDO;
-			case ICON_DELETEGROUP: return DELETE_GROUP;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -243,11 +241,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_MOVEBYDRAG] = "images\\MenuIcons\\MOVE.jpg";
 	MenuIconImages[ICON_SELINFO] = "images\\MenuIcons\\SelInfo.jpg";
 	MenuIconImages[ICON_SCRAMBLE] = "images\\MenuIcons\\Scramble.jpg";
-	MenuIconImages[ICON_STICK] = "images\\MenuIcons\\Stick.jpg";
 	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\Undo.jpg";
-	MenuIconImages[ICON_DELETEGROUP] = "images\\MenuIcons\\DeleteGroup.jpg";
 	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\Redo.jpg";
-
 
 	//TODO: Prepare images for each menu icon and add it to the list
 
@@ -612,10 +607,6 @@ void GUI::DrawPolygon(int* A_X, int* A_Y, int num, GfxInfo PolygonGfxInfo) const
 
 	pWind->DrawPolygon(A_X,A_Y ,num, style);
 
-}
-void GUI::StickImage(string Path, Point Pointt, int WW, int LL) const
-{
-	pWind->DrawImage(Path, Pointt.x, Pointt.y, WW, LL);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

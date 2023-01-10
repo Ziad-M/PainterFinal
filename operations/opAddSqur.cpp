@@ -51,15 +51,14 @@ void opAddSqur::Execute()
 	//Add the square to the list of shapes
 	pGr->Addshape(R);
 
-
 }
 void opAddSqur::Undo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack();
 }
 void opAddSqur::Redo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

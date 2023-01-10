@@ -57,11 +57,7 @@ void Exit::Execute()
 }
 void Exit::Undo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
 }
 void Exit::Redo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
 }

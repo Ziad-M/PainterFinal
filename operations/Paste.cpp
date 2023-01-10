@@ -40,11 +40,9 @@ void Paste::Execute()
 }
 void Paste::Undo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+
 }
 void Paste::Redo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	
 }

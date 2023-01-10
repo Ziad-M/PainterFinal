@@ -26,11 +26,7 @@ void Copy::Execute()
 }
 void Copy::Undo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
 }
 void Copy::Redo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
 }

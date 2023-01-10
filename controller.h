@@ -19,8 +19,9 @@ private:
 	int shapes_count = 0;		//Actual number of shapes
 	shape* shapesList[MaxshapesCount];	//List of all shapes (Array of pointers)
 	shape* Clipboard;
-	stack<operation*> Operations; // Creating a stack called "Operations" to store the made operations
-	stack<operation*> UndoneOperations;  // Creating another stack called UndoneOperations to store 
+	stack<operation*> DoneStack; // Creating a stack called "Operations" to store the made operations
+	stack<operation*> UndoneStack;  // Creating another stack called UnDoneStack to store 
+
 
 public:	
 	int multiSelect;//enabling multiSelect
@@ -35,17 +36,16 @@ public:
 	void SetClipboard(shape*);   //setting the clipboard
 	shape* GetClipboard()const;
 	Graph* getGraph() const;
+	void Undo();
+	void Redo();
+	void newOp(operation* newOp);
+
+	operation* PreviousDone();  // Returns a pointer to the last added operation to the stack
+	operation* PreviousUndone();		// Return a pointer to the last undone operation in the stack
 
 	// -- Interface Management Functions
 	GUI *GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	
-	void Undo(); 
-	void Redo();
-
-	void addNewOp(operation* newOp);
-	
-	operation* getLastDoneOp();  // Returns a pointer to the last added operation to the stack
-	operation* getLastUndoneOp();		// Return a pointer to the last undone operation in the stack
 
 };
 

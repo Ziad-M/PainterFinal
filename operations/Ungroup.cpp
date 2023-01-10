@@ -10,24 +10,17 @@ opUngroup::~opUngroup()
 //Execute the operation
 void opUngroup::Execute()
 {
-	GUI* pUI = pControl->GetUI();
-	Graph* pGr = pControl->getGraph();
-	int num = -1;
-	while (num < 0)
-	{
-		pUI->PrintMessage("Please Enter group number: ");
-		num = stoi(pUI->GetSrting());
-	}
-	pGr->DeleteGroupNum(num);
+
+
 
 }
 void opUngroup::Undo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack();
 }
 void opUngroup::Redo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

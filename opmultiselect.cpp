@@ -24,10 +24,10 @@ void MULTISELECT::Execute() {
 void MULTISELECT::Undo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack(); 
 }
 void MULTISELECT::Redo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

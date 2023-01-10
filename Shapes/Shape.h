@@ -11,8 +11,6 @@ protected:
 	GfxInfo ShpGfxInfo;	//shape graphis info
 	shape* pntr;
 	shape* pntrr;
-	bool Image = false;
-	int group = 0;
 	/// Add more parameters if needed.
 
 public:
@@ -31,88 +29,6 @@ public:
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	///Decide the parameters that you should pass to each function	
 	virtual bool point_included(int x, int y) = 0;
 
@@ -125,13 +41,7 @@ public:
 	virtual void OPZOOM(double x, double y, double scale) = 0;   //virtual func. to zoom all shapes
 	virtual void ResizeShape(double scale) = 0;  	//Resize a single shape
 	virtual void RotateShape() = 0;  	//Rotate a single shape
-	virtual void Scramble(int i, int j) = 0;
-	virtual void StickImage(GUI* pGUI);
-	void groupset(int i);
-	int groupget();
-	bool isImageThere();
-	void setImage();
-
+	virtual void Scramble() = 0;
 };
 
 //double Fcaldistance(Point x ,Point y); 

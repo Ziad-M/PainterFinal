@@ -11,9 +11,9 @@ class GUI;
 class Graph
 {
 private:
+	vector <shape*> UndoneShapes;
 	vector <shape*> shapesList; //a container to hold all shapes							   
-	shape* selectedShape;	
-	vector <shape*> UndoneShapesList;
+	shape* selectedShape;	//pointer to the currently selected shape
 public:										
 	Graph();
 	~Graph();
@@ -21,8 +21,8 @@ public:
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape
 	shape* GetSelected(); //get the selected shape
-	void SendFromShapesListToUndo();
-	void SendFromUndoToShapesList();
+	void AddToUndoStack();
+	void AddtoShapeList();
 	shape* GetSelectedShape() const;
 	void UnselectShapes();
     void Save(ofstream& outfile);	//Save all shapes to a file
@@ -33,11 +33,5 @@ public:
 	void RESIZE(double n);              //RESIZE FUNCTION
 	void ROTATE();  //rotate a single shape by 90 deg
 	void Scramble();
-	void StickImage(GUI* pGUI) const;
 	bool isSaved = false;
-	void AddGroupNum(int i);
-	void DeleteGroupNum(int i);
-	void DeleteGroup(int i);
-
-	
 };

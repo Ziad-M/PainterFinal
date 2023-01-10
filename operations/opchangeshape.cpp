@@ -35,10 +35,21 @@ void opClrPlt::Execute()
 	pUI->ClearStatusBar();
 
 	pUI->CreateDrawToolBar(); //create new draw tool bar 
+
+
+}
+void opClrPlt::Undo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddToUndoStack();
+}
+void opClrPlt::Redo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddtoShapeList();
 }
 
-void opClrPlt::Undo() {}
-void opClrPlt::Redo() {}
+
 
 
 //==================================================================================//
@@ -104,11 +115,22 @@ void opPenWidth::Execute()
 
 	// clear the status bar
 	pUI->ClearStatusBar();
+
+
+}
+void opPenWidth::Undo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddToUndoStack();
+}
+void opPenWidth::Redo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddtoShapeList();
 }
 
 
-void opPenWidth::Undo() {}
-void opPenWidth::Redo() {}
+
 
 //==================================================================================//
 //							changing in selected shape              				//
@@ -232,9 +254,17 @@ void opChngSelInfo::Execute()
 
 	}
 }
-void opChngSelInfo::Undo() {}
-void opChngSelInfo::Redo() {}
 
+void opChngSelInfo::Undo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddToUndoStack();
+}
+void opChngSelInfo::Redo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddtoShapeList();
+}
 
 
 

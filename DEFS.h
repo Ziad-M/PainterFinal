@@ -32,7 +32,7 @@ MULTISELECTION ,
 	dChangeToBlack,   //change current draw color to black
 	dChangeToBlue,  //change current draw color to blue
 	dChangeToYellow,   //change current draw color to yellow
-	STICK,
+
 	fChangeToRed,    //change current fill color to red
 	fChangeToGreen,   //change current fill color to green
 	fChangeToBlack,   //change current fill color to black
@@ -57,7 +57,6 @@ MULTISELECTION ,
 	SCRAMBLE,
 	UNDO,
 	REDO,
-	DELETE_GROUP,
 	///TODO: Add more operation types (if needed)
 };
 

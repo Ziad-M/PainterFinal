@@ -15,7 +15,7 @@ void opSelect::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
-	pUI->PrintMessage("Select Your Figure");
+	pUI->PrintMessage("Select Your Firgure");
 	pUI->GetPointClicked(P.x, P.y);
 	if (pGr->Getshape(P.x, P.y))
 	{
@@ -32,10 +32,10 @@ void opSelect::Execute()
 void opSelect::Undo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack();
 }
 void opSelect::Redo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

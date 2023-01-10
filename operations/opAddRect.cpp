@@ -52,14 +52,13 @@ void opAddRect::Execute()
 	pGr->Addshape(R);
 
 }
-
 void opAddRect::Undo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack();
 }
 void opAddRect::Redo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

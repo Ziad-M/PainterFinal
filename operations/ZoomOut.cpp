@@ -17,14 +17,15 @@ void opZoomOut::Execute()
 	Graph* pGraph = pControl->getGraph();  //poinrt to graph
 	pGraph->ZOOM_IN_OUT(0.8, 640, 310);  //zoom in and out acording to the scale factor around the origin
 
+
 }
 void opZoomOut::Undo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack();
 }
 void opZoomOut::Redo()
 {
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

@@ -2,7 +2,7 @@
 #include "..\shapes\Ccircle.h"
 
 #include "..\controller.h"
-#include "..\opUndo.h"
+
 #include "..\GUI\GUI.h"
 
 opAddCircle::opAddCircle(controller* pCont) :operation(pCont)
@@ -51,11 +51,13 @@ void opAddCircle::Execute()
 	pGr->Addshape(R);
 
 }
-void opAddCircle::Undo() {
+void opAddCircle::Undo()
+{
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	pGr->AddToUndoStack();
 }
-void opAddCircle::Redo() {
+void opAddCircle::Redo()
+{
 	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	pGr->AddtoShapeList();
 }

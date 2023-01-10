@@ -129,7 +129,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="controller.cpp" />
-    <ClCompile Include="DeleteGroup.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\Copy.cpp" />
     <ClCompile Include="operations\Exit.cpp" />
@@ -158,7 +157,6 @@
     <ClCompile Include="opmultiselect.cpp" />
     <ClCompile Include="opRedo.cpp" />
     <ClCompile Include="opSelect.cpp" />
-    <ClCompile Include="opStickImage.cpp" />
     <ClCompile Include="opUndo.cpp" />
     <ClCompile Include="Shapes\Ccircle.cpp" />
     <ClCompile Include="Shapes\Cregpolygon.cpp" />
@@ -209,7 +207,6 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant2.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
     <ClCompile Include="GUI\GUI.cpp" />
-    <ClInclude Include="DeleteGroup.h" />
     <ClInclude Include="operations\Copy.h" />
     <ClInclude Include="operations\Exit.h" />
     <ClInclude Include="operations\Group.h" />
@@ -238,7 +235,6 @@
     <ClInclude Include="opmultiselect.h" />
     <ClInclude Include="opRedo.h" />
     <ClInclude Include="opSelect.h" />
-    <ClInclude Include="opStickImage.h" />
     <ClInclude Include="opUndo.h" />
     <ClInclude Include="Shapes\Ccircle.h" />
     <ClInclude Include="Shapes\Cregpolygon.h" />

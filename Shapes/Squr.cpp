@@ -62,7 +62,7 @@ void Squr::Draw(GUI* pUI) const
 
 shape* Squr::copy()
 {
-	shape* ptr = new Squr(Corner1, Corner2, ShpGfxInfo);
+	shape* ptr = new  Squr(Corner1, Corner2, ShpGfxInfo);
 	return ptr;
 }
 
@@ -87,10 +87,10 @@ void Squr::ResizeShape(double scale)  	//Resize a single squre
 void Squr::RotateShape()  	//Rotate a single squre
 {}
 
-void Squr::Scramble(int i, int j)
+void Squr::Scramble()
 {
 
-	/* int temp1 = (rand() % 1000);
+	int temp1 = (rand() % 1000);
 	int temp2 = (rand() % 500);
 
 	double CenteroidX = (Corner1.x + Corner2.x) / 2;
@@ -103,20 +103,10 @@ void Squr::Scramble(int i, int j)
 	int Temp1y = Corner1.y;
 	int Temp2x = Corner2.x;
 	int Temp2y = Corner2.y;
-	*/
 	
-	Corner1.x = i - 50;
-	Corner1.y = j - 50;
-	Corner2.x = i + 50;
-	Corner2.y = j + 50;
-}
-void Squr::StickImage(GUI* pGUI)
-{
-	Point P;
-	P.x = Corner1.x;
-	P.y = Corner1.y;
-	int width = abs(Corner1.x - Corner2.x);
-	int length = abs(Corner1.y - Corner2.y);
-	string image = "images\\MenuIcons\\Stick.jpg";
-	pGUI->StickImage(image, P, width, length);
+	Corner1.x = Temp1x + dx;
+	Corner1.y = Temp1y + dy;
+	Corner2.x = Temp2x + dx;
+	Corner2.y = Temp2y + dy;
+
 }

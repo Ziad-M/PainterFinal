@@ -40,7 +40,16 @@ void opAddTriangle::Execute()
 	Graph* pGr = pControl->getGraph();
 	//Add the rectangle to the list of shapes
 	pGr->Addshape(T);
-	
+
 }
-void opAddTriangle::Undo() {}
-void opAddTriangle::Redo() {}
+void opAddTriangle::Undo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddToUndoStack();
+}
+void opAddTriangle::Redo()
+{
+	Graph* pGr = pControl->getGraph();
+	pGr->AddtoShapeList();
+}
+

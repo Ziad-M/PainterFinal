@@ -27,23 +27,3 @@ void shape::ChngDrawWidth(int Wnum)
 {
 	ShpGfxInfo.BorderWdth = Wnum;
 }
-void shape::setImage()
-{
-	Image = true;
-}
-void shape::StickImage(GUI* pGUI)
-{
-}
-bool shape::isImageThere()
-{
-	return Image;
-}
-
-void shape::groupset(int i)
-{
-	group = i;
-}
-int shape::groupget()
-{
-	return group;
-}

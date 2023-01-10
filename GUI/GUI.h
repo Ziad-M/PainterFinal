@@ -56,20 +56,22 @@ class GUI
 		ICON_GROUP,     //group shapes
 		ICON_UNGROUP,    //ungroup shapes
 		ICON_RESIZE_GROUP,  //resize a group of shapes
+
 		ICON_LOAD,      // Load icon in menu
 		ICON_SAVE,      // Save icon in menu
 		ICON_MOVEBYDRAG,
 		ICON_SCRAMBLE,
-		ICON_STICK,
+
 		ICON_SELECT,
 		ICON_MULTISELECTION, 
 		ICON_UNDO,
 		ICON_REDO,
 		ICON_COPY,
 		ICON_PASTE,
-		ICON_DELETEGROUP,
+		
 		ICON_PLAY,      //Play mode icon in menu
 		ICON_EXIT,		//Exit icon
+
 		DRAW_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
 	};
@@ -170,7 +172,6 @@ public:
 	void setCrntDrawColor(operationType dcolor);	//set current drawing color
 	void setCrntFillColor(operationType fcolor);	//set current filling color
 	void setCrntPenWidth(int width);		//set current pen width
-	void StickImage(string, Point, int, int) const;
 
 	~GUI();
 };

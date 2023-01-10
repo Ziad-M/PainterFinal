@@ -1,5 +1,5 @@
 #include "Ctriangle.h"
-#include <cmath>
+
 
 Ctriangle::Ctriangle(Point P1, Point P2, Point P3, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
@@ -74,9 +74,8 @@ void Ctriangle::ResizeShape(double scale)  	//Resize a single triangle
 void Ctriangle::RotateShape()  	//Rotate a single triangle
 {}
 
-void Ctriangle::Scramble(int i, int j)
+void Ctriangle::Scramble()
 {
-	/*
 	int temp1tri = rand() % 1300;
 	int temp2tri = rand() % 650;
 	double CenterX = (Corner1.x + Corner2.x + corner3.x) / 3;
@@ -90,29 +89,5 @@ void Ctriangle::Scramble(int i, int j)
 	Corner2.y = Corner2.y + y;
 	corner3.x = corner3.x + x;
 	corner3.y = corner3.y + y;
-	*/
-	double CenterX = (Corner1.x + Corner2.x + corner3.x) / 3;
-	double CenterY = (Corner1.y + Corner2.y + corner3.y) / 3;
 
-	Corner1.x = i;
-	Corner1.y = j + ((Corner1.y - CenterY) / j) * 50;
-	Corner2.x = i + ((Corner2.x - CenterX) / i) * 50;
-	Corner2.y = j + ((Corner2.y - CenterY) / j) * 50;
-	corner3.x = i + ((corner3.x - CenterX) / i) * 50;
-	corner3.y = j + ((corner3.y - CenterY) / j) * 50;
-
-}
-void Ctriangle::StickImage(GUI* pGUI)
-{
-	double MaxPx = max(max(Corner1.x, Corner2.x), corner3.x);
-	double MinPx = min(min(Corner1.x, Corner2.x), corner3.x);
-	double MaxPy = max(max(Corner1.y, Corner2.y), corner3.y);
-	double MinPy = min(min(Corner1.y, Corner2.y), corner3.y);
-	Point P;
-	P.x = MinPx;
-	P.y = MinPy;
-	int width = MaxPx - MinPx;
-	int length = MaxPy - MinPy;
-	string image = "images\\MenuIcons\\Stick.jpg";
-	pGUI->StickImage(image, P, width, length);
 }

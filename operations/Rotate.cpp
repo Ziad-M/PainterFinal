@@ -14,11 +14,9 @@ void opRotate::Execute()
 }
 void opRotate::Undo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromShapesListToUndo();
+	
 }
 void opRotate::Redo()
 {
-	Graph* pGr = pControl->getGraph();
-	pGr->SendFromUndoToShapesList();
+	
 }
